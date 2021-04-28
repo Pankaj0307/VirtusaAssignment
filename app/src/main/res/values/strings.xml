@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">VirtusaAssignment</string>
+    <string name="check_network">Please Check Internet Connection</string>
+    <string name="no_data_found">No data found</string>
+    <string name="retry">Retry</string>
+    <string name="ok">Ok</string>
+
+</resources>
