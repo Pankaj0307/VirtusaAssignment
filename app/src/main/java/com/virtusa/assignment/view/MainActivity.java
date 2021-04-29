@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 
@@ -18,6 +19,12 @@ import butterknife.BindView;
 public class MainActivity extends BaseActivity {
     @BindView(R.id.constraint_main)
     ConstraintLayout constraint_main;
+    @BindView(R.id.cv_userOne)
+    CardView cv_userOne;
+    @BindView(R.id.cv_userTwo)
+    CardView cv_userTwo;
+    @BindView(R.id.cv_userThree)
+    CardView cv_userThree;
     @BindView(R.id.tv_userOne)
     TextView tv_userOne;
     @BindView(R.id.tv_userTwo)
@@ -93,14 +100,17 @@ public class MainActivity extends BaseActivity {
         String userEmail = userResponse.getData().getEmail();
         switch (userResponse.getData().getId()) {
             case 1:
+                cv_userOne.setVisibility(View.VISIBLE);
                 tv_userOne.setText(userEmail);
                 getUserDetails(3, false);
                 break;
             case 3:
+                cv_userTwo.setVisibility(View.VISIBLE);
                 tv_userTwo.setText(userEmail);
                 getUserDetails(10, false);
                 break;
             case 10:
+                cv_userThree.setVisibility(View.VISIBLE);
                 tv_userThree.setText(userEmail);
                 break;
         }
